@@ -1,13 +1,21 @@
 import React from 'react'
-import Link from 'next/link';
+import Footer from '../../components/Footer/Footer'
+import Layout from '../../components/Layout/Layout'
 
-function about() {
+import style from './about.module.css'
+
+function About() {
     return (
-        <div className='text-blue-700'>
-            Halaman about
-            <Link href="../post/post">Kembali ke post</Link>
-        </div>
+        <Layout>
+            <header className={style.banner}>
+                
+            </header>
+            <main className={style.banner}>
+                
+            </main>
+            <Footer/>
+        </Layout>
     )
 }
 
-export default about
+export default About
