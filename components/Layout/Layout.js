@@ -5,7 +5,6 @@ function Layout({children}) {
   return (
     <div className={style.layout}>
       <Navbar/>
-      {console.log("asdasd")}
       <div>
         {children}
       </div>
