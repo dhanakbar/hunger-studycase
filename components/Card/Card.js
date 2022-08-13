@@ -7,7 +7,7 @@ function Card({ description, name, srcImg }) {
       <div className={style.card_img} style={{backgroundImage: `URL('${srcImg}')`}}></div>
       <div className={style.card_body}>
         <small className={style.card_rating}>Rating : 4.5</small>
-        <h5 className={style.card_title}>{name}</h5>
+        <p className={style.card_title}>{name}</p>
         <p className={style.card_desc}>{description}</p>
       </div>
     </div>

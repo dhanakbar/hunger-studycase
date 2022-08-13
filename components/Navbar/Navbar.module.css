@@ -11,6 +11,7 @@
 }
 
 .logo{
+    color: #ffffff;
     font-family: 'Pattaya', sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -35,6 +36,7 @@
     margin: 4px;
     border-radius: 4px;
     cursor: pointer;
+    list-style-type: none;
 }
 
 .nav_link:hover{
@@ -50,14 +52,18 @@
     .nav_menu{
         position: absolute;
         display: inline-block;
-        padding: 24px;
+        padding: 32px;
         background-color: #000000;
-        top: 40px;
+        top: 32px;
         right: -156px;
         transition: all ease-in-out 0.5s;
     }
 
     .nav_menu_active{
         right: 0px !important;
+    }
+
+    .nav_link{
+        text-align: center;
     }
 }
