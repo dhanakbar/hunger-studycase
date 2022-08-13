@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './Navbar.module.css'
-import Link from 'next/link'
 
 function Navbar() {
+    const [isMenuShown, setIsMenuShown] = useState(false)
+
+    useEffect(()=>{
+        setIsMenuShown(false)
+    },[])
+
     return (
         <div className={style.navbar}>
             <div className="logo">
                 Ini Logo
             </div>
-            <ul className={style.nav_menu}>
-                <li className={style.nav_link}><Link href="#">About</Link></li>
-                <li className={style.nav_link}><Link href="#">Product</Link></li>
-                <li className={style.nav_link}><Link href="#">Gallery</Link></li>
+            <svg onClick={()=>setIsMenuShown(!isMenuShown)} className={style.hamburger_menu} xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <ul className={`${style.nav_menu} ${isMenuShown&&style.nav_menu_active}`}>
+                <li className={style.nav_link}>Home</li>
+                <li className={style.nav_link}>Favorite</li>
+                <li className={style.nav_link}>About Us</li>
             </ul>
         </div>
     )

@@ -1,16 +1,55 @@
 .navbar{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 8px 32px;
-    background-color: blue;
+    background-color: #000000;
     align-items: center;
+    position: fixed;
 }
+
+.hamburger_menu{
+    color: #ffffff;
+    width: 24px;
+    display: none;
+}
+
 .nav_menu{
     display: flex;
+    color: #ffffff;
 }
+
 .nav_link{
     padding: 8px 16px;
-    background-color: white;
+    color: #ffffff !important;
+    font-weight: 500;
     color: black;
     margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nav_link:hover{
+    background-color: rgb(231, 208, 0);
+    color: #000000 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger_menu{
+        display: inline-block;
+    }
+
+    .nav_menu{
+        position: absolute;
+        display: inline-block;
+        padding: 24px;
+        background-color: #000000;
+        top: 40px;
+        right: -156px;
+        transition: all ease-in-out 0.5s;
+    }
+
+    .nav_menu_active{
+        right: 0px !important;
+    }
 }

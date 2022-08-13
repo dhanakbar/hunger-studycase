@@ -1,8 +1,9 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
+import style from './layout.module.css'
 function Layout({children}) {
   return (
-    <div>
+    <div className={style.layout}>
       <Navbar/>
       {console.log("asdasd")}
       <div>
