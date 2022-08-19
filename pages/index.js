@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import style from '../styles/Home.module.css'
-import Footer from '../components/Footer/Footer'
 import Layout from '../components/Layout/Layout'
 import Card from '../components/Card/Card'
 import Button from '../components/Button/Button'
@@ -34,7 +33,6 @@ function Home() {
               <Card description="With the unfinished building design, Garland Social House has succeeded in making this restaurant an aesthetic and popular place for young people, not to mention that good service and a clean place make this restaurant even more famous." name="Ramadhan's Resto" srcImg="https://a.cdn-hotels.com/gdcs/production70/d1612/e770458c-1d0a-4db2-bda6-54dd62d794de.jpg"/>
             </div>
           </section>
-          <Footer/>
         </Layout>
     </div>
   )
