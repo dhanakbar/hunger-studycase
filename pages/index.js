@@ -9,7 +9,7 @@ function Home() {
   const [restaurants, setRestaurants] = useState([])
 
   useEffect( ()=>{
-    fetch('/api/dashboard')
+    fetch('/api/restaurants')
       .then((res) => res.json())
       .then((data) => {
         setRestaurants(data)
