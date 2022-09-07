@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import style from './Navbar.module.css'
 
@@ -17,8 +18,8 @@ function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <ul className={`${style.nav_menu} ${isMenuShown&&style.nav_menu_active}`}>
-                <li className={style.nav_link}>Home</li>
-                <li className={style.nav_link}>Favorite</li>
+                <li className={style.nav_link}><Link href='/'>Home</Link></li>
+                <li className={style.nav_link}><Link href='/galery'>Galery</Link></li>
                 <li className={style.nav_link}>About Us</li>
             </ul>
         </div>
