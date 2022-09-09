@@ -23,7 +23,7 @@ function Galery() {
         response
             .then((res) => res.json())
             .then((data) => {
-                setRestaurants(data)
+                setRestaurantsPromise(data)
             }).catch(err=>{
                 console.log("error" + err.message);
             });
@@ -58,7 +58,7 @@ function Galery() {
                 <h4 className={style.section_title}>Explore Restaurant 'Promise'</h4>
                 <div className={style.cards}>
                     {
-                        restaurantsAsyncAwait.map(restaurant =>{
+                        restaurantsPromise.map(restaurant =>{
                         return(
                             <Card key={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
                         )
