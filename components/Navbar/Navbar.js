@@ -1,9 +1,28 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import style from './Navbar.module.css'
 
 function Navbar() {
     const [isMenuShown, setIsMenuShown] = useState(false)
+    const navLinks = [
+        {
+            page : "Home",
+            route : "/"
+        },
+        {
+            page : "About Us",
+            route : "/about"
+        },
+        {
+            page : "Galery",
+            route : "/galery"
+        },
+        {
+            page : "Favorites",
+            route : "/favorites"
+        },
+    ];
 
     useEffect(()=>{
         setIsMenuShown(false)
@@ -18,9 +37,11 @@ function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <ul className={`${style.nav_menu} ${isMenuShown&&style.nav_menu_active}`}>
-                <li className={style.nav_link}><Link href='/'>Home</Link></li>
-                <li className={style.nav_link}><Link href='/galery'>Galery</Link></li>
-                <li className={style.nav_link}>About Us</li>
+                {
+                    navLinks.map(navLink => {
+                        return <li key={navLink.page} className={style.nav_link}><Link href={navLink.route}>{navLink.page}</Link></li>
+                    })
+                }
             </ul>
         </div>
     )

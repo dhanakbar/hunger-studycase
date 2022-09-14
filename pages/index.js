@@ -4,6 +4,7 @@ import Layout from '../components/Layout/Layout'
 import Card from '../components/Card/Card'
 import Button from '../components/Button/Button'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 function Home() {
   const [restaurants, setRestaurants] = useState([])
@@ -42,7 +43,7 @@ function Home() {
               {
                 restaurants.map(restaurant =>{
                   return(
-                    <Card key={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
+                    <Card key={restaurant.id} id={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
                   )
                 })
               }

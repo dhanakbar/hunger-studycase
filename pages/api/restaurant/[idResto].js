@@ -1,4 +1,4 @@
-import { restaurants } from "../../../data/restaurants"
+import { restaurants } from "../../../data/restaurants";
 
 export default function userHandler(req, res) {
     const id = req.query.idResto
