@@ -27,16 +27,15 @@ function Favorite() {
             </Head>
             <Layout>
                 <section>
+                    <h2 className={style.title}>List Menu Makanan { foods.length != 0 && foods[0].name }</h2>
                     <div className={style.cards}>
-                        
+
                         {
 
-                            foods.length != 0?
-                                foods[0].menus.map(menu => {
-                                return <Card description={menu.description} name={menu.menuname} srcImg={menu.images} key={menu.id} />
-                                })
-                                :
-                                console.log(foods)
+                            foods.length != 0 &&
+                            foods[0].menus.map(menu => {
+                            return <Card description={menu.description} name={menu.menuname} srcImg={menu.images} key={menu.id} />
+                            })
                         }
                         
                     </div>

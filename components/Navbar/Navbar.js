@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import style from './Navbar.module.css'
 
 function Navbar() {
@@ -31,7 +30,7 @@ function Navbar() {
     return (
         <div className={style.navbar}>
             <div className={style.logo}>
-                Hunger
+                <Link href='/'>Hunger</Link>
             </div>
             <svg onClick={()=>setIsMenuShown(!isMenuShown)} className={style.hamburger_menu} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
