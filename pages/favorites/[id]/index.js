@@ -12,14 +12,10 @@ function Favorite() {
     const { id } = router.query;
 
     useEffect(() => {
-        // const result = restaurants.filter((restaurant) => {
-        //     return restaurant.id == parseInt(id);
-        // });
-        // setFoods(result);
-        // console.log(result);
-        fetch(`/api/restaurant/${id}`)
-        .then(res => res.json())
-        .then(data => setFoods(data))
+        const result = restaurants.filter((restaurant) => {
+            return restaurant.id == parseInt(id);
+        });
+        setFoods(result);
     }, [id]);
 
     return (
@@ -31,18 +27,19 @@ function Favorite() {
             </Head>
             <Layout>
                 <section>
-                <div className={style.cards}>
-                    
-                    {
+                    <div className={style.cards}>
+                        
+                        {
 
-                        foods[0].menus.map(menu => {
-                            return <Card navigate={"/"} description={menu.description} name={menu.menuname} srcImg={menu.images} key={menu.id} />
-                        })
-
-                        // console.log(foods)
-                    }
-                    
-                </div>
+                            foods.length != 0?
+                                foods[0].menus.map(menu => {
+                                return <Card description={menu.description} name={menu.menuname} srcImg={menu.images} key={menu.id} />
+                                })
+                                :
+                                console.log(foods)
+                        }
+                        
+                    </div>
                 </section>
             </Layout>
             </>

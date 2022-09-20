@@ -4,7 +4,6 @@ import Layout from '../components/Layout/Layout'
 import Card from '../components/Card/Card'
 import Button from '../components/Button/Button'
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 
 function Home() {
   const [restaurants, setRestaurants] = useState([])

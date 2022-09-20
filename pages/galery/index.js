@@ -48,7 +48,7 @@ function Galery() {
                     {
                         restaurantsAsyncAwait.map(restaurant =>{
                         return(
-                            <Card key={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
+                            <Card id={restaurant.id} key={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
                         )
                         })
                     }
@@ -60,7 +60,7 @@ function Galery() {
                     {
                         restaurantsPromise.map(restaurant =>{
                         return(
-                            <Card key={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
+                            <Card id={restaurant.id} key={restaurant.id} description={restaurant.description} location={restaurant.location} name={restaurant.name} srcImg={restaurant.image} rating={restaurant.rating}/>
                         )
                         })
                     }

@@ -1,23 +1,11 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
-import axios from 'axios';
 import Card from "../../components/Card/Card";
 import style from "./Favorites.module.css";
 
 function Favorites() {
-    const [foods, setFoods] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
-
-    const getFoods = async () => {
-        await axios
-        .get('https://foodbukka.herokuapp.com/api/v1/menu')
-        .then(res => res.data.Result)
-        .then(data => {
-            setFoods(data);
-        })
-        .catch(err => console.log(err.message));
-    };
 
     const getRestaurants = () => {
         fetch('/api/restaurants')
@@ -28,7 +16,6 @@ function Favorites() {
     };
 
     useEffect(()=>{
-        getFoods();
         getRestaurants();
     }, []);
     return <>
@@ -43,7 +30,7 @@ function Favorites() {
                         {
                             restaurants.map(restaurant =>{
                                 return restaurant.menus.map(menu=>{
-                                    return <Card navigate={`/favorites/${menu.id}`} key={menu.id} description={menu.description} name={menu.menuname} srcImg={menu.images[1]} />
+                                    return <Card key={menu.id} description={menu.description} name={menu.menuname} srcImg={menu.images[0]} />
                                 })
                             }) 
                         }
