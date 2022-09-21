@@ -1,0 +1,43 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+.form{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstName, .category, .description{
+    width: 500px;
+    height: 36px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 0;
+    margin-bottom: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.description{
+    height: 100px;
+}
+
+.label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.submit{
+    width: 100%;
+    height: 48px;
+    border: 0;
+    font-size: 16px;
+    background-color: rgb(231, 209, 6);
+    font-weight: bold;
+}

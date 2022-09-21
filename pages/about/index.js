@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import style from "./About.module.css";
 import Card from "../../components/Card/Card";
+import Form from '../../components/Form/Form';
 
 function Galery() {
     const [restaurantsAsyncAwait, setRestaurantsAsyncAwait] = useState([])
@@ -40,6 +41,10 @@ return <>
                         })
                     }
                 </div>
+            </section>
+
+            <section className={style.products}>
+                    <Form />
             </section>
         </Layout>
     </>;
