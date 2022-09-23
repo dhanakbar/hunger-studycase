@@ -1,6 +1,6 @@
-import React from 'react'
-import {useForm} from 'react-hook-form'
-import style from './Form.module.css'
+import React from "react"
+import {useForm} from "react-hook-form"
+import style from "./Form.module.css"
 
 function Form() {
     const {register, handleSubmit, errors} = useForm();
@@ -14,7 +14,7 @@ function Form() {
             <h1>Silahkan Isikan Form Berikut</h1>
 
             <form className={style.form}>
-                <label className={style.label} for="firstName">First Name</label>
+                <label className={style.label}>First Name</label>
                 <input className={style.firstName} type="text" name="firstName" {...register("firstName")}/>
 
                 <select className={style.category} name="category" {...register("category")}>
@@ -24,7 +24,7 @@ function Form() {
                     <option value="small">Small</option>
                 </select>
 
-                <label className={style.label} for="description">Description</label>
+                <label className={style.label}>Description</label>
                 <textarea className={style.description} type="text" name="description" {...register("description")}/>
 
                 <button className={style.submit} type="button" onClick={handleSubmit(onSubmit)}>Submit</button>
