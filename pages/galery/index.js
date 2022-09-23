@@ -43,7 +43,7 @@ function Galery() {
 
         <Layout>
             <section className={style.products}>
-                <h4 className={style.section_title}>Explore Restaurant "Async/Await"</h4>
+                <h4 className={style.section_title}>Explore Restaurant Async/Await</h4>
                 <div className={style.cards}>
                     {
                         restaurantsAsyncAwait.map(restaurant =>{
@@ -55,7 +55,7 @@ function Galery() {
                 </div>
             </section>
             <section className={style.products}>
-                <h4 className={style.section_title}>Explore Restaurant "Promise"</h4>
+                <h4 className={style.section_title}>Explore Restaurant Promise</h4>
                 <div className={style.cards}>
                     {
                         restaurantsPromise.map(restaurant =>{
