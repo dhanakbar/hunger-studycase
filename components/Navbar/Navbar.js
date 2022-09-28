@@ -1,9 +1,12 @@
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import style from './Navbar.module.css'
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import style from './Navbar.module.css';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 function Navbar() {
-    const [isMenuShown, setIsMenuShown] = useState(false)
+    const { data: session } = useSession();
+
+    const [isMenuShown, setIsMenuShown] = useState(false);
     const navLinks = [
         {
             page : "Home",
@@ -40,6 +43,12 @@ function Navbar() {
                     navLinks.map(navLink => {
                         return <li key={navLink.page} className={style.nav_link}><Link href={navLink.route}>{navLink.page}</Link></li>
                     })
+                }
+                {
+                    !session && <li onClick={() => signIn()} className={style.nav_link}><Link href="">Sign In</Link></li>
+                }
+                {
+                    session && <li onClick={() => signOut()} className={style.nav_link}><Link href="">Sign Out</Link></li>
                 }
             </ul>
         </div>
