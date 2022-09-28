@@ -4,8 +4,10 @@ import Layout from '../components/Layout/Layout'
 import Card from '../components/Card/Card'
 import Button from '../components/Button/Button'
 import { useEffect, useState } from 'react'
+import { useSession } from 'next-auth/react'
 
 function Home() {
+  const { data: session } = useSession();
   const [restaurants, setRestaurants] = useState([])
 
   useEffect( ()=>{
@@ -28,6 +30,11 @@ function Home() {
           <header className={style.hero}>
             <div className={style.banner}>
               <div className={style.display}>
+                {
+                  session && <div className={style.display}>
+                    Welcome, {session.user.name.toLocaleUpperCase()}
+                  </div>
+                }
                 Find Your Favorite Restaurant.
               </div>
               <p className={style.lead}>
